@@ -20,13 +20,13 @@ public class MailClient {
 
     @Value("${spring.mail.username}")
     private String from;
-    public void sendMail(String to, String content, String subject){
+    public void sendMail(String to, String subject, String content){
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message);
             helper.setFrom(from);
-            helper.setSubject(subject);
             helper.setTo(to);
+            helper.setSubject(subject);
             helper.setText(content,true);
             mailSender.send(helper.getMimeMessage());
 

@@ -23,7 +23,7 @@ public class MailTests {
 
     @Test
     public void testTextMail(){
-        mailClient.sendMail("3488524032@qq.com", "TEST", "Welcome.");
+        mailClient.sendMail("641023470@qq.com", "TEST", "Welcome.");
     }
     @Test
     public void testHtmlMail() {
@@ -33,6 +33,6 @@ public class MailTests {
         String content = templateEngine.process("/mail/demo", context);
         System.out.println(content);
 
-        mailClient.sendMail("3488524032@qq.com", "HTML", content);
+        mailClient.sendMail("641023470@qq.com", "HTML", content);
     }
 }
